@@ -10,12 +10,12 @@ export default function Tabs (props: any) {
 
   const tabsHeaders = pages.map((item: any, index: any) => {
     const { title } = pages[index];
-    return <li key={index} className={(activeTab === index)? "active" : ""} id={index} onClick={() => setActiveTab(index)}>{title}</li>
+    return <li key={index} className={(activeTab === index)? "active" : ""} onClick={() => setActiveTab(index)}>{title}</li>
   })
 
   const tabsContents = pages.map((item: any, index: any) => {
     const { content } = pages[index];
-    return <div key={index} id={index} hidden={activeTab !== index}>{content}</div>
+    return <div key={index} hidden={activeTab !== index}>{content}</div>
   })
 
   return <React.Fragment>
