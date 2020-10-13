@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.TabsBody>div {
+  margin-right: 30px; margin-left: 30px;
+  text-align: justify;
+}
+
+ul.TabsHeader {
+  list-style: none;
+  display: flex;
+  align-self: flex-start;
+}
+
+ul.TabsHeader li {
+  margin: 10px;
+  padding-right: 5px; padding-left: 5px;
+  padding-top: 10px; padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.active {
+  color: #1E9A32;
+  border-bottom: 3px solid #1E9A32;
+}
