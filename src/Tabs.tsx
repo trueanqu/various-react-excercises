@@ -6,12 +6,16 @@ import React, { useState } from 'react'
   }[]
 }*/
 
-interface TabsProp {
+interface TabsPage {
   title: string,
   content: string | JSX.Element,
 }
 
-export default function Tabs (props: {pages: TabsProp[]}) {
+interface TabsProp {
+  pages: TabsPage[],
+}
+
+export default function Tabs (props: TabsProp) {
   const {pages} = props;
   const [activeTab, setActiveTab] = useState(0)
 
@@ -19,12 +23,12 @@ export default function Tabs (props: {pages: TabsProp[]}) {
     setActiveTab(index);
   }*/// how to use it like this?
 
-  const tabsHeaders = pages.map((item: TabsProp, index: number) => {
+  const tabsHeaders = pages.map((item, index) => {
     const { title } = item;
     return <li key={index} className={(activeTab === index)? "active" : ""} onClick={() => setActiveTab(index)}>{title}</li>
   })
 
-  const tabsContents = pages.map((item: TabsProp, index: number) => {
+  const tabsContents = pages.map((item, index) => {
     const { content } = item;
     return <div key={index} hidden={activeTab !== index}>{content}</div>
   })
